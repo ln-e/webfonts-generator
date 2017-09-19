@@ -44,14 +44,19 @@ var generators = {
 			_.each(options.files, function(file, idx) {
 				var glyph = fs.createReadStream(file)
 				var name = options.names[idx]
-				var unicode = String.fromCharCode(options.codepoints[name])
-                var ligature = ''
-                for(var i=0;i<name.length;i++) {
-                    ligature+=String.fromCharCode(name.charCodeAt(i))
-                }
+				var unicode;
+				// console.log(options);
+				if (options.ligature) {
+					unicode = options.ligatureName(name);
+				} else {
+					unicode = String.fromCharCode(options.codepoints[name]);
+				}
+
+				// console.log(name, unicode);
+
 				glyph.metadata = {
 					name: name,
-					unicode: [unicode,ligature]
+					unicode: [unicode]
 				}
 				fontStream.write(glyph)
 			})

@@ -24,6 +24,14 @@ var DEFAULT_OPTIONS = {
 	fontName: 'iconfont',
 	css: true,
 	cssTemplate: TEMPLATES.css,
+	ligature: false,
+	ligatureName: function (name) {
+		var ligature = '';
+		for(var i = 0; i < name.length; i++) {
+			ligature+=String.fromCharCode(name.charCodeAt(i));
+		}
+		return ligature;
+	},
 	html: false,
 	htmlTemplate: TEMPLATES.html,
 	types: ['eot', 'woff', 'woff2'],
