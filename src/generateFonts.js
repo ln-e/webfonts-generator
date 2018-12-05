@@ -45,14 +45,12 @@ var generators = {
 				var glyph = fs.createReadStream(file)
 				var name = options.names[idx]
 				var unicode;
-				// console.log(options);
+
 				if (options.ligature) {
 					unicode = options.ligatureName(name);
 				} else {
 					unicode = String.fromCharCode(options.codepoints[name]);
 				}
-
-				// console.log(name, unicode);
 
 				glyph.metadata = {
 					name: name,
