@@ -99,9 +99,14 @@ var webfont = function(options, done) {
 		.then(function(result) {
 			if (options.writeFiles) writeResult(result, options)
 
+			result.getCodepoints = function () {
+				return options.codepoints;
+			}
+
 			result.generateCss = function(urls) {
 				return renderCss(options, urls)
 			}
+
 			done(null, result)
 		})
 		.catch(function(err) { done(err) })

@@ -66,7 +66,7 @@ describe('webfont', function() {
 		})
 	})
 
-	it('returns object with fonts and function generateCss()', function() {
+	it('returns object with fonts, generateCss() and getCodepoints() methods', function(done) {
 		webfontsGenerator(OPTIONS, function(err, result) {
 			assert(result.svg)
 			assert(result.ttf)
@@ -74,14 +74,21 @@ describe('webfont', function() {
 			assert.equal(typeof result.generateCss, 'function')
 			var css = result.generateCss()
 			assert.equal(typeof css, 'string')
+
+			assert.equal(typeof result.getCodepoints, 'function')
+			assert(_.isEqual(Object.keys(result.getCodepoints()), ['back', 'close', 'triangleDown']))
+			assert.equal(typeof result.getCodepoints().back, 'number')
+
+			done()
 		})
 	})
 
-	it('function generateCss can change urls', function() {
+	it('function generateCss can change urls', function(done) {
 		webfontsGenerator(OPTIONS, function(err, result) {
 			var urls = {svg: 'AAA', ttf: 'BBB', woff: 'CCC', eot: 'DDD'}
 			var css = result.generateCss(urls)
 			assert(css.indexOf('AAA') !== -1)
+			done()
 		})
 	})
 

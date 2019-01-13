@@ -258,8 +258,7 @@ Default: `true`
 It is possible to not create files and get generated fonts in object
  to write them to files later.
 <br>
-Also results object will have function `generateCss([urls])`
-where `urls` is an object with future fonts urls.
+Also results object will have functions `generateCss([urls])` (where `urls` is an object with future fonts urls.) and `getCodepoints()` which allow you to implement your own writing method.
 
 ```js
 webfontsGenerator({
@@ -268,6 +267,7 @@ webfontsGenerator({
 }, function(error, result) {
   // result.eot, result.ttf, etc - generated fonts
   // result.generateCss(urls) - function to generate css
+  // result.getCodepoints() - function to extract the codepoints map
 })
 ```
 
