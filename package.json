@@ -1,6 +1,6 @@
 {
   "name": "@ln-e/webfonts-generator",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Generator of webfonts from svg icons",
   "main": "src/index.js",
   "directories": {
@@ -48,7 +48,7 @@
   "devDependencies": {
     "file-type": "^3.9.0",
     "mocha": "^3.1.2",
-    "node-sass": "^3.4.2",
+    "node-sass": "^4.13.1",
     "prettier": "^2.0.4",
     "read-chunk": "^2.0.0"
   }
