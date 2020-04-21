@@ -2,9 +2,9 @@
 @import '../dest/fontName2';
 
 .back {
-	@include webfont-icon('back')
+  @include webfont-icon('back');
 }
 
 .close {
-	@include webfont-icon('close')
+  @include webfont-icon('close');
 }

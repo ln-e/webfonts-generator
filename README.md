@@ -1,8 +1,5 @@
 # webfonts-generator
 
-
-[![Build Status](https://travis-ci.org/sunflowerdeath/webfonts-generator.svg?branch=master)](https://travis-ci.org/sunflowerdeath/webfonts-generator)
-
 Generator of webfonts from SVG icons.
 
 Features:
@@ -14,13 +11,13 @@ Features:
 ## Install
 
 ```
-npm install --save-dev webfonts-generator
+npm install --save-dev @ln-e/webfonts-generator
 ```
 
 ## Usage
 
 ```js
-const webfontsGenerator = require('webfonts-generator');
+const webfontsGenerator = require('@ln-e/webfonts-generator');
 
 webfontsGenerator({
   files: [
