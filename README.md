@@ -201,6 +201,22 @@ Default: basename of file
 
 Function that takes path of file and return name of icon.
 
+### ligature
+
+Type: `boolean`
+<br>
+Default: `false`
+
+Whether ligature function will be used or not.
+
+### ligatureName
+
+Type: `function(string) -> string`
+<br>
+Default: basename of file
+
+Function that takes name of file and return ligature for that icon.
+
 ### startCodepoint
 
 Type: `number`
