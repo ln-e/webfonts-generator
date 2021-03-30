@@ -3,7 +3,7 @@ var path = require('path');
 var _ = require('underscore');
 var assert = require('assert');
 
-var sass = require('node-sass');
+var sass = require('sass');
 var Q = require('q');
 var readChunk = require('read-chunk');
 var getFileType = require('file-type');
